@@ -9,11 +9,13 @@ def compare(s1, s2):
         count += s2.count(ngram)
     return count / max(len(s1), len(s2))
 
+
 def remove_symbols(s):
     symbols_to_remove = ",!?."
     for symbol in symbols_to_remove:
         s = s.replace(symbol, "")
     return s
+
 
 def int_val(s):
     try:

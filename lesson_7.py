@@ -2,9 +2,17 @@ from pprint import pprint
 from itertools import product
 from utils import compare, int_val, remove_symbols
 
-# Задание 1: Добавить вывод неподходящих запросов и отладки
-# Задание 2: Найти ошибку в коде
-# Задание 3: Сделать аналогично для ФИО и адреса, разбитых на поля
+"""
+Задание 1:
+Добавить вывод неподходящих запросов и отладки
+
+Задание 2:
+Найти ошибку в коде
+
+Задание 3:
+Сделать аналогично для ФИО и адреса, разбитых на поля
+
+"""
 
 ADDRESS_WORDS = {'дом', 'д', 'улица', 'улице', 'ул', 'квартира', 'кв', 'живет'}
 NAME_WORDS = {'имя', 'зовут', 'фамилия', 'отчество'}
@@ -19,8 +27,6 @@ STREET_WORDS = {'улица', 'улице' 'ул'}
 ROOM_WORDS = {'квартира', 'кв'}
 
 
-
-
 class Person:
     def __init__(self, name, age, address):
         self.name, self.age, self.address = name, age, address
@@ -28,18 +34,17 @@ class Person:
 
     def fuzzy_compare(self, query):
         query = remove_symbols(query)
-        q = set(query.split())
+        query_words_set = set(query.split())
         score = 0
         for m, f in zip(
                 [ADDRESS_WORDS, NAME_WORDS, AGE_WORDS],
                 [self.by_address, self.by_name, self.by_age]
         ):
-            if m & q:
-                score += f(q)
+            if m & query_words_set:
+                score += f(query_words_set)
 
         return score > 0.51
 
-    # ______________________________________
     def by_address(self, Q):
 
         for q in Q:
@@ -98,7 +103,6 @@ class Person:
                 score = self.by_first_name(Q)
                 return score > 0.51
 
-    # ______________________________________
     def by_surname(self, Q):
         Q = Q - SURNAME_WORDS
         W = self.name.split()
@@ -169,7 +173,6 @@ class Person:
                 rez += [(compare(a, b), a, b)]
             return max(rez)[0]
 
-    # ______________________________________
     def __eq__(self, obj):
         if type(obj) == Person:
             return
@@ -190,7 +193,8 @@ class Person:
                     return score > 0.51
 
         else:
-            return print("Введенное значение с типом [%s] не распознано, попробуйте еще" % type(obj))
+            return print("Введенное значение с типом [%s] не распознано,"
+                         " попробуйте еще" % type(obj))
 
     def __repr__(self):
         return "Person('%s',%s,'%s')" % (self.name, self.age, self.address)

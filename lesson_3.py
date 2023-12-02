@@ -1,4 +1,8 @@
-# задание 1: Выбрать персонажа, перебрав всех циклом в списке
+"""Задание 1:
+
+Выбрать персонажа, перебрав всех циклом в списке
+
+"""
 
 personsList = [
     ["Aleksandr", "Meresii", "АСУ4-23-1мз", 1, "group leader"],
@@ -38,16 +42,27 @@ print(search_person_by_attr_in_list("name", "Aleksandr"))
 print(search_person_by_attr_in_list("group", "АСУ8-23-1мз"))
 print(search_person_by_attr_in_list("surname", "Petuhov"))
 
-# задание 2: Выбрать персонажа, перебрав всех циклом в словаре
+"""Задание 2:
+
+Выбрать персонажа, перебрав всех циклом в словаре
+
+"""
 
 personsDict = {
-    "1": {"name": "Aleksandr", "surname": "Meresii", "group": "АСУ4-23-1мз", "course": 1, "role": "group leader"},
-    "2": {"name": "Petr", "surname": "Ivanov", "group": "АСУ4-23-1мз", "course": 1, "role": "student"},
-    "3": {"name": "Ivan", "surname": "Semenov", "group": "АСУ4-22-1мз", "course": 1, "role": "student"},
-    "4": {"name": "Sergei", "surname": "Petrov", "group": "АСУ4-21-1мз", "course": 3, "role": "student"},
-    "5": {"name": "Elena", "surname": "Popova", "group": "АСУ4-21-1мз", "course": 3, "role": "group leader"},
-    "6": {"name": "John", "surname": "Doe", "group": "АСУ8-23-1мз", "course": 1, "role": "student"},
-    "7": {"name": "Maria", "surname": "Utkina", "group": "АСУ8-23-1мз", "course": 1, "role": "group leader"},
+    "1": {"name": "Aleksandr", "surname": "Meresii", "group": "АСУ4-23-1мз",
+          "course": 1, "role": "group leader"},
+    "2": {"name": "Petr", "surname": "Ivanov", "group": "АСУ4-23-1мз",
+          "course": 1, "role": "student"},
+    "3": {"name": "Ivan", "surname": "Semenov", "group": "АСУ4-22-1мз",
+          "course": 1, "role": "student"},
+    "4": {"name": "Sergei", "surname": "Petrov", "group": "АСУ4-21-1мз",
+          "course": 3, "role": "student"},
+    "5": {"name": "Elena", "surname": "Popova", "group": "АСУ4-21-1мз",
+          "course": 3, "role": "group leader"},
+    "6": {"name": "John", "surname": "Doe", "group": "АСУ8-23-1мз",
+          "course": 1, "role": "student"},
+    "7": {"name": "Maria", "surname": "Utkina", "group": "АСУ8-23-1мз",
+          "course": 1, "role": "group leader"},
 }
 
 
@@ -65,7 +80,11 @@ print(search_person_by_attr_in_dict("name", "Elena"))
 print(search_person_by_attr_in_dict("group", "АСУ4-23-1мз"))
 print(search_person_by_attr_in_dict("surname", "Gagarin"))
 
-# задание 3: Сделать запрос данных от пользователя
+"""Задание 3:
+
+Сделать запрос данных от пользователя
+
+"""
 
 searchAttr = input("Введите аттрибут по которому будем искать человека?: ")
 searchAttrValue = input("Введите значение аттрибута которое ищем?: ")

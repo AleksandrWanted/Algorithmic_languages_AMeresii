@@ -1,14 +1,25 @@
 import string
 
-# задание 1: Оформить функцией поиск в списке
-# см. файл lesson_3.py, функция search_person_by_attr_in_list
+"""Задание 1:
 
-# задание 2: Оформить функцией поиск в словаре
-# см. файл lesson_3.py, функция search_person_by_attr_in_dict
+Оформить функцией поиск в списке
+см. файл lesson_3.py, функция search_person_by_attr_in_list
 
-# задание 3: Сделать нечеткое сравнение элементов
+"""
 
-# Считаем что сравнивать необходимо элементы из списка и словаря persons
+"""Задание 2:
+
+Оформить функцией поиск в словаре
+см. файл lesson_3.py, функция search_person_by_attr_in_dict
+
+"""
+
+"""Задание 3:
+
+Сделать нечеткое сравнение элементов
+Считаем что сравнивать необходимо элементы из списка и словаря persons
+
+"""
 
 personsList = [
     ["Aleksandr", "Meresii", "АСУ4-23-1мз", 1, "group leader"],
@@ -21,18 +32,25 @@ personsList = [
 ]
 
 personsDict = {
-    "1": {"name": "Aleksandr", "surname": "Meresii", "group": "АСУ4-23-1мз", "course": 1, "role": "group leader"},
-    "2": {"name": "Petr", "surname": "Ivanov", "group": "АСУ4-23-1мз", "course": 1, "role": "student"},
-    "3": {"name": "Ivan", "surname": "Semenov", "group": "АСУ4-22-1мз", "course": 1, "role": "student"},
-    "4": {"name": "Sergei", "surname": "Petrov", "group": "АСУ4-21-1мз", "course": 3, "role": "student"},
-    "5": {"name": "Elena", "surname": "Popova", "group": "АСУ4-21-1мз", "course": 3, "role": "group leader"},
-    "6": {"name": "John", "surname": "Doe", "group": "АСУ8-23-1мз", "course": 1, "role": "student"},
-    "7": {"name": "Maria", "surname": "Utkina", "group": "АСУ8-23-1мз", "course": 1, "role": "group leader"},
+    "1": {"name": "Aleksandr", "surname": "Meresii", "group": "АСУ4-23-1мз",
+          "course": 1, "role": "group leader"},
+    "2": {"name": "Petr", "surname": "Ivanov", "group": "АСУ4-23-1мз",
+          "course": 1, "role": "student"},
+    "3": {"name": "Ivan", "surname": "Semenov", "group": "АСУ4-22-1мз",
+          "course": 1, "role": "student"},
+    "4": {"name": "Sergei", "surname": "Petrov", "group": "АСУ4-21-1мз",
+          "course": 3, "role": "student"},
+    "5": {"name": "Elena", "surname": "Popova", "group": "АСУ4-21-1мз",
+          "course": 3, "role": "group leader"},
+    "6": {"name": "John", "surname": "Doe", "group": "АСУ8-23-1мз",
+          "course": 1, "role": "student"},
+    "7": {"name": "Maria", "surname": "Utkina", "group": "АСУ8-23-1мз",
+          "course": 1, "role": "group leader"},
 }
+
 
 def compare_elements(elm1, elm2):
     if type(elm1) == type(elm2) and type(elm1) == list:
-
         main_elm = []
         secondary_elm = []
 
@@ -55,7 +73,6 @@ def compare_elements(elm1, elm2):
         return total / len(main_elm)
 
     if type(elm1) == type(elm2) and type(elm1) == dict:
-
         main_elm = {}
         secondary_elm = {}
 
@@ -78,6 +95,7 @@ def compare_elements(elm1, elm2):
 
         return total / len(main_elm)
 
+
 def compare_str(s1, s2):
     main_str = ""
     secondary_str = ""
@@ -95,6 +113,7 @@ def compare_str(s1, s2):
             counter += 1
 
     return counter / len(main_str)
+
 
 print(compare_elements(personsList[0], personsList[0]))
 print(compare_elements(personsList[3], personsList[4]))
