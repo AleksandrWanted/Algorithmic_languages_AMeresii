@@ -1,5 +1,6 @@
 from itertools import product
 from sys import stderr
+from utils import compare
 
 """Задание 1:
 
@@ -108,7 +109,7 @@ class Children(Person):
     def can_buy_ticket(self, other, film):
         super().can_buy_ticket(other, film)
         try:
-            if type(self) == Children and film.genre == "horror":
+            if type(self) == Children and compare(film.genre, "horror") > 0.6:
                 raise FilmGenreException()
         except IndexError:
             pass
